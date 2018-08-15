@@ -25,7 +25,7 @@ import Distribution
 from builtins import sum
 
 
-def Main (area):
+def Main (area,cp,months,tof):
 
     # Inputs
     
@@ -33,11 +33,13 @@ def Main (area):
     wp=0.145 # ratio in [kwp/m2]
     
     #Area of the solar panels in [m2]
+    
     print('area es == '+str(area) )
+    print(' postal code is== '+str(cp))
     #area=100 #m2
     #postal code
     #cp=int(raw_input("What is your postal code??"))
-    cp=44670
+    #cp=44670
     #Exchange rate
     
     exchangeRate=ExchangeRate.exchange() #[mxn/usd]
@@ -72,7 +74,7 @@ def Main (area):
     dRateM=(1+dRate)**(1/12)-1
     print (dRateM)
     #number of months
-    months=12*25
+    #months=12*25
     
     '''
     #Tax benefits
@@ -81,14 +83,14 @@ def Main (area):
     '''
     #Loan
     #percentageLoan= int(raw_input('Percentage of borrowed from the initial investment'))/100
-    percentageLoan=0
+    percentageLoan=0.44
     installment= Loan.loan(dRateM,months,percentageLoan*iInv)   
     
     
     #Energy price per [$/KW*h]  Type of user
     #type=raw_input('Enter type of user:residential,industrial or business')
     
-    energyP=EnergyPriceN.allocation('residential', solarP, cp)*float(exchangeRate)
+    energyP=EnergyPriceN.allocation(tof, solarP, cp)*float(exchangeRate)
     print ('Unit price:'+str(energyP)+' $/kwh')
     #energyP=0.147
     #energyP=2.6811

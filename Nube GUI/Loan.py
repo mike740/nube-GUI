@@ -37,6 +37,7 @@ def Mycsv2(periods):
             #thewriter.writerow({'Period':period, 'Monthly energy production':pro,'Panel degradation': deg,'Energy generation': gen,'Minimum Fees':fee,'Cashflow':cas,'Net cashflow':net})
     
 def loan(rate,periods,quantity):
+    
     installment = np.pmt(rate,periods,-quantity) # monthly installment
     numberOfPaymentsM.append(0)
     monthlyInstallmentM.append(0)

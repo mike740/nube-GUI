@@ -20,13 +20,13 @@ def allocation(type,solarP,cp):
     consumption=int(solarP)/12
     print('Monthly consumption:  '+str(consumption)+' kw*h/monthly')
     
-    if type=='residential':
+    if type=='Residential':
         energyP=residential(typeR,consumption)
         return(energyP)
-    elif type=='industrial':
+    elif type=='Industrial':
         energyP=industrial(consumption)
         return(energyP)
-    elif    type=='business':
+    elif    type=='Business':
         energyP=business(consumption)
         return(energyP)
     

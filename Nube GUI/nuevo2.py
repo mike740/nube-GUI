@@ -14,7 +14,7 @@ from pyqtgraph.Qt import QtCore, QtGui
 
 
 from click._compat import raw_input
-from Loan import principalM, monthlyInstallmentM
+#from Loan import principalM, monthlyInstallmentM
 import matplotlib.pyplot as plt         
 import numpy as np
 import SolarProductionN
@@ -46,12 +46,17 @@ class MyApp(QtWidgets.QMainWindow, Ui_answer):
     
     def postal(self):
         area=int(self.area.toPlainText())
-        MainGUI.Main(area)
-    
+        cp=int(self.pc.toPlainText())
+        months=int(self.period.toPlainText())
+        tof=str(self.comboBox.currentText()) # Type of user
+        MainGUI.Main(area,cp,months,tof)
+        #self.df=self.comboBox.parse(self.combox.currentText())
+        
+            
         
         
     def erase(self):
-        self.ans.setText('juan')
+        self.ans.setText('erase')
         
         #self.ans2.setText('')
       
